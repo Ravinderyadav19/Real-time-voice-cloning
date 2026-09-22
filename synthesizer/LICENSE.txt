@@ -1,9 +1,8 @@
 MIT License
 
-Original work Copyright (c) 2018 Rayhane Mama (https://github.com/Rayhane-mamah)
-Original work Copyright (c) 2019 fatchord (https://github.com/fatchord)
-Modified work Copyright (c) 2026 Ravinder Yadav (https://github.com/RavinderYadav)
-Modified work Copyright (c) 2020 blue-fish (https://github.com/blue-fish)
+Original work Copyright (c) 2018 Ravinder Yadav (https://github.com/RavinderYadav)
+Original work Copyright (c) 2019 Ravinder Yadav (https://github.com/RavinderYadav)
+Modified work Copyright (c) 2020 Ravinder Yadav (https://github.com/RavinderYadav)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
