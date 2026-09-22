@@ -28,16 +28,16 @@ algorithms are described in the following paper:
 C. Veaux, J. Yamagishi and S. King, 
 "The voice bank corpus: Design, collection and data analysis of 
 a large regional accent speech database," 
-https://doi.org/10.1109/ICSDA.2013.6709856
+DOI: 10.1109/ICSDA.2013.6709856
 
 The rainbow passage and elicitation paragraph are the same for all
 speakers. The rainbow passage can be found at International Dialects
 of English Archive:
-(http://web.ku.edu/~idea/readings/rainbow.htm). The elicitation
+(- International Dialects of English Archive). The elicitation
 paragraph is identical to the one used for the speech accent archive
-(http://accent.gmu.edu). The details of the the speech accent archive
+(- speech accent archive). The details of the the speech accent archive
 can be found at
-http://www.ualberta.ca/~aacl2009/PDFs/WeinbergerKunath2009AACL.pdf
+see referenced paper for details
 
 All speech data was recorded using an identical recording setup: an
 omni-directional microphone (DPA 4035) and a small diaphragm condenser 
@@ -57,21 +57,21 @@ multi-speaker text-to-speech synthesis systems and waveform modeling.
 COPYING 
 
 This corpus is licensed under the Creative Commons License: Attribution 4.0 International 
-http://creativecommons.org/licenses/by/4.0/legalcode 
+Creative Commons Attribution 4.0 legal code
 
 VCTK VARIANTS 
 There are several variants of the VCTK corpus: 
 Speech enhancement 
-- Noisy speech database for training speech enhancement algorithms and TTS models where we added various types of noises to VCTK artificially: http://dx.doi.org/10.7488/ds/2117
-- Reverberant speech database for training speech dereverberation algorithms and TTS models where we added various types of reverberantion to VCTK artificially http://dx.doi.org/10.7488/ds/1425
-- Noisy reverberant speech database for training speech enhancement algorithms and TTS models http://dx.doi.org/10.7488/ds/2139
-- Device Recorded VCTK where speech signals of the VCTK corpus were played back and re-recorded in office environments using relatively inexpensive consumer devices http://dx.doi.org/10.7488/ds/2316
-- The Microsoft Scalable Noisy Speech Dataset (MS-SNSD) https://github.com/microsoft/MS-SNSD
+- Noisy speech database for training speech enhancement algorithms and TTS models where various types of noises were added to VCTK artificially (DOI: 10.7488/ds/2117)
+- Reverberant speech database for training speech dereverberation algorithms and TTS models with added reverberation (DOI: 10.7488/ds/1425)
+- Noisy reverberant speech database for training speech enhancement algorithms and TTS models (DOI: 10.7488/ds/2139)
+- Device Recorded VCTK where speech signals of the VCTK corpus were played back and re-recorded in office environments using consumer devices (DOI: 10.7488/ds/2316)
+- The Microsoft Scalable Noisy Speech Dataset (MS-SNSD)
 
 ASV and anti-spoofing 
-- Spoofing and Anti-Spoofing (SAS) corpus, which is a collection of synthetic speech signals produced by nine techniques, two of which are speech synthesis, and seven are voice conversion. All of them were built using the VCTK corpus. http://dx.doi.org/10.7488/ds/252
-- Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2015) Database. This database consists of synthetic speech signals produced by ten techniques and this has been used in the first Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2015) http://dx.doi.org/10.7488/ds/298
-- ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database. This database has been used in the 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2019) https://doi.org/10.7488/ds/2555
+- Spoofing and Anti-Spoofing (SAS) corpus, which is a collection of synthetic speech signals produced by nine techniques. See cited references for details (DOI: 10.7488/ds/252)
+- Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2015) Database. See cited references for details (DOI: 10.7488/ds/298)
+- ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database (DOI: 10.7488/ds/2555)
 
 
 ACKNOWLEDGEMENTS

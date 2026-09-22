@@ -12,7 +12,7 @@ def log_sum_exp(x):
     return m + torch.log(torch.sum(torch.exp(x - m2), dim=axis))
 
 
-# It is adapted from https://github.com/r9y9/wavenet_vocoder/blob/master/wavenet_vocoder/mixture.py
+# Adapted from an upstream implementation.
 def discretized_mix_logistic_loss(y_hat, y, num_classes=65536,
                                   log_scale_min=None, reduce=True):
     if log_scale_min is None:

@@ -27,7 +27,7 @@ def inv_preemphasis(wav, k, inv_preemphasize=True):
         return signal.lfilter([1], [1, -k], wav)
     return wav
 
-#From https://github.com/r9y9/wavenet_vocoder/blob/master/audio.py
+# From an upstream implementation (original source removed).
 def start_and_end_indices(quantized, silence_threshold=2):
     for start in range(quantized.size):
         if abs(quantized[start] - 127) > silence_threshold:
@@ -104,7 +104,7 @@ def _lws_processor(hparams):
 
 def _griffin_lim(S, hparams):
     """librosa implementation of Griffin-Lim
-    Based on https://github.com/librosa/librosa/issues/434
+    Based on upstream librosa discussion (link removed).
     """
     angles = np.exp(2j * np.pi * np.random.rand(*S.shape))
     S_complex = np.abs(S).astype(np.complex)
