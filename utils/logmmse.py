@@ -21,8 +21,8 @@
 # SOFTWARE.
 #
 #
-# This code was extracted from the logmmse package (https://pypi.org/project/logmmse/) and I
-# simply modified the interface to meet my needs.
+# This code was extracted from the logmmse package and the interface was
+# modified to meet project needs.
 
 
 import numpy as np

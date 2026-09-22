@@ -35,7 +35,6 @@ def ensure_default_models(models_dir: Path):
 
         _download_model(model_name, target_dir)
 
-            assert target_path.exists() and target_path.stat().st_size == expected_size, (
-            f"Download for {target_path.name} failed. You may download models manually instead.\n"
-            f"https://huggingface.co/{HUGGINGFACE_REPO}"
+        assert target_path.exists() and target_path.stat().st_size == expected_size, (
+            f"Download for {target_path.name} failed. You may download models manually and place them in {target_dir}."
         )
