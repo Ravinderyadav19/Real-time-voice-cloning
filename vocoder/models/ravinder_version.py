@@ -1,10 +1,27 @@
-"""Compatibility shim: original module name retained for backwards
-compatibility. The implementation has been moved to
-`vocoder.models.ravinder_version`. Importing from this module will
-re-export the new implementation.
-"""
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from vocoder.distribution import sample_from_discretized_mix_logistic
+from vocoder.display import *
+from vocoder.audio import *
 
-from vocoder.models.ravinder_version import *  # noqa: F401,F403
+
+class ResBlock(nn.Module):
+    def __init__(self, dims):
+        super().__init__()
+        self.conv1 = nn.Conv1d(dims, dims, kernel_size=1, bias=False)
+        self.conv2 = nn.Conv1d(dims, dims, kernel_size=1, bias=False)
+        self.batch_norm1 = nn.BatchNorm1d(dims)
+        self.batch_norm2 = nn.BatchNorm1d(dims)
+
+    def forward(self, x):
+        residual = x
+        x = self.conv1(x)
+        x = self.batch_norm1(x)
+        x = F.relu(x)
+        x = self.conv2(x)
+        x = self.batch_norm2(x)
+        return x + residual
 
 
 class MelResNet(nn.Module):
@@ -240,6 +257,7 @@ class WaveRNN(nn.Module):
         return output
 
 
+
     def gen_display(self, i, seq_len, b_size, gen_rate):
         pbar = progbar(i, seq_len)
         msg = f'| {pbar} {i*b_size}/{seq_len*b_size} | Batch Size: {b_size} | Gen Rate: {gen_rate:.1f}kHz | '
@@ -381,37 +399,3 @@ class WaveRNN(nn.Module):
             start = i * (target + overlap)
             end = start + target + 2 * overlap
             unfolded[start:end] += y[i]
-
-        return unfolded
-
-    def get_step(self) :
-        return self.step.data.item()
-
-    def checkpoint(self, model_dir, optimizer) :
-        k_steps = self.get_step() // 1000
-        self.save(model_dir.joinpath("checkpoint_%dk_steps.pt" % k_steps), optimizer)
-
-    def log(self, path, msg) :
-        with open(path, 'a') as f:
-            print(msg, file=f)
-
-    def load(self, path, optimizer) :
-        checkpoint = torch.load(path)
-        if "optimizer_state" in checkpoint:
-            self.load_state_dict(checkpoint["model_state"])
-            optimizer.load_state_dict(checkpoint["optimizer_state"])
-        else:
-            # Backwards compatibility
-            self.load_state_dict(checkpoint)
-
-    def save(self, path, optimizer) :
-        torch.save({
-            "model_state": self.state_dict(),
-            "optimizer_state": optimizer.state_dict(),
-        }, path)
-
-    def num_params(self, print_out=True):
-        parameters = filter(lambda p: p.requires_grad, self.parameters())
-        parameters = sum([np.prod(p.size()) for p in parameters]) / 1_000_000
-        if print_out :
-            print('Trainable Parameters: %.3fM' % parameters)
