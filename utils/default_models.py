@@ -2,7 +2,7 @@ from pathlib import Path
 
 from huggingface_hub import hf_hub_download
 
-HUGGINGFACE_REPO = "CorentinJ/SV2TTS"
+HUGGINGFACE_REPO = "RavinderYadav/SV2TTS"
 
 default_models = {
     "encoder": 17090379,
@@ -35,7 +35,7 @@ def ensure_default_models(models_dir: Path):
 
         _download_model(model_name, target_dir)
 
-        assert target_path.exists() and target_path.stat().st_size == expected_size, (
+            assert target_path.exists() and target_path.stat().st_size == expected_size, (
             f"Download for {target_path.name} failed. You may download models manually instead.\n"
             f"https://huggingface.co/{HUGGINGFACE_REPO}"
         )
